@@ -1,4 +1,6 @@
 #include <Arduino.h>
+#include <stdio.h>
+
 
 // put function declarations here:
 int myFunction(int, int);
