@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <avr/io.h>
 #include "ALU_pin.h"
+#include <stdio.h>
 
 // Test operands — change these to try different values
 static const uint8_t A = 12;
@@ -38,6 +39,13 @@ void setup() {
 }
 
 void loop() {
+
+    // Variables
+    int currentNum = 0;
+
+    // Ask for user input 
+    printf("What is the first number? ");
+    
     // Read 2-bit op select from input pins
     uint8_t op = 0;
     if (PIND & (1 << INPUT_BIT0)) op |= 0x01;
