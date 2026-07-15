@@ -1,4 +1,4 @@
-#include "ALU_pin.h"
+/*#include "ALU_pin.h"
 #include <avr/io.h>
 #include <math.h>
 
@@ -51,3 +51,4 @@ ALUResult computeEXP(uint8_t a, uint8_t b) {
     r.zero   = (r.result == 0);
     return r;
 }
+*/

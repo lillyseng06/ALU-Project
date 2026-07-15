@@ -1,4 +1,4 @@
-#include <Arduino.h>
+/* #include <Arduino.h>
 #include <avr/io.h>
 #include "ALU_pin.h"
 #include <stdio.h>
@@ -63,3 +63,21 @@ void loop() {
     applyResult(r);
     delay(500);
 }
+*/
+#include <Arduino.h>
+#include <LiquidCrystal.h>
+
+// RS, E, DB4, DB5, DB6, DB7
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+void setup() {
+  lcd.begin(16, 2);
+
+  lcd.setCursor(0, 0);
+  lcd.print("I am so cool");
+
+  lcd.setCursor(0, 1);
+  lcd.print("-Lilly");
+}
+
+void loop() {}
