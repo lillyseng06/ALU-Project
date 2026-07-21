@@ -12,14 +12,14 @@
 #define RESULT_BIT1 6
 
 struct ALUResult {
-    uint8_t result;
+    uint16_t result;
     bool zero;
     bool carry;
 };
 
-ALUResult computeSUM(uint8_t a, uint8_t b);
-ALUResult computeSUB(uint8_t a, uint8_t b);
-ALUResult computeDIV(uint8_t a, uint8_t b);
-ALUResult computeMULT(uint8_t a, uint8_t b);
+ALUResult computeSUM(uint16_t a, uint16_t b);
+ALUResult computeSUB(uint16_t a, uint16_t b);
+ALUResult computeDIV(uint16_t a, uint16_t b);
+ALUResult computeMULT(uint16_t a, uint16_t b);
 
 #endif

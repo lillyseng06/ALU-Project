@@ -2,34 +2,34 @@
 #include <avr/io.h>
 #include <math.h>
 
-ALUResult computeSUM(uint8_t a, uint8_t b) {
+ALUResult computeSUM(uint16_t a, uint16_t b) {
     ALUResult r {};
-    uint8_t sum = a + b;
-    r.result = sum & 0xF;
-    r.carry  = sum > 0xF;
+    uint16_t sum = a + b;
+    r.result = sum & 0xFF;
+    r.carry  = sum > 0xFF;
     r.zero   = (r.result == 0);
     return r;
 }
 
-ALUResult computeSUB(uint8_t a, uint8_t b) {
+ALUResult computeSUB(uint16_t a, uint16_t b) {
     ALUResult r {};
-    uint8_t diff = a - b;
-    r.result = diff & 0xF;
+    uint16_t diff = a - b;
+    r.result = diff & 0xFF;
     r.carry  = (b > a);
     r.zero   = (r.result == 0);
     return r;
 }
 
-ALUResult computeMULT(uint8_t a, uint8_t b) {
+ALUResult computeMULT(uint16_t a, uint16_t b) {
     ALUResult r {};
-    uint16_t product = (uint16_t)a * b;
-    r.result = product & 0xF;
-    r.carry  = (product > 0xF);
+    uint32_t product = (uint32_t)a * b;
+    r.result = product & 0xFF;
+    r.carry  = (product > 0xFF);
     r.zero   = (r.result == 0);
     return r;
 }
 
-ALUResult computeDIV(uint8_t a, uint8_t b) {
+ALUResult computeDIV(uint16_t a, uint16_t b) {
     ALUResult r {};
     if (b == 0) {
         r.result = 0xF;
@@ -43,11 +43,11 @@ ALUResult computeDIV(uint8_t a, uint8_t b) {
     return r;
 }
 
-ALUResult computeEXP(uint8_t a, uint8_t b) {
+ALUResult computeEXP(uint16_t a, uint16_t b) {
     ALUResult r {};
-    uint8_t val = (uint8_t)pow((double)a, (double)b);
-    r.result = val & 0xF;
-    r.carry  = (val > 0xF);
+    uint16_t val = (uint16_t)pow((double)a, (double)b);
+    r.result = val & 0xFF;
+    r.carry  = (val > 0xFF);
     r.zero   = (r.result == 0);
     return r;
 }
